@@ -1,0 +1,1 @@
+Game of rock paper scissors made with JS that only runs on the console. Part of the Odin project
