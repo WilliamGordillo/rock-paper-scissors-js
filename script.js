@@ -28,32 +28,47 @@ function playRound(humanChoice, computerChoice){
         console.log("It's a tie!")
     }
     else if( (humanChoice == "scissors") && (computerChoice == "rock")){
-        computerScore++
         console.log("You lose hahaaaa!")
+        computerScore++
     }
     else if( (humanChoice == "rock") && (computerChoice == "paper")){
-        computerScore++
         console.log("You lose hahaaaa!")
+        computerScore++
+        
     }
     else if( (humanChoice == "paper") && (computerChoice == "scissors")){
-        computerScore++
-        console.log("You lose hahaaaa!")}
+        console.log("You lose hahaaaa!")
+        return computerScore++ }
     else if( (humanChoice == "paper") && (computerChoice == "rock")){
-        humanScore++
          console.log("You win OMG!")
+         return humanScore++
     }
     else if( (humanChoice == "rock") && (computerChoice == "scissors")){
-        humanScore++
         console.log("You win OMG!")
+        return humanScore++
     }
     else if( (humanChoice == "scissors") && (computerChoice == "paper")){
-        humanScore++
-         console.log("You win OMG!")
+        console.log("You win OMG!")
+        return humanScore++
     }
 
 }
 
-let humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection,computerSelection);
+function playGame(){
+    for (let step = 0; step < 5; step++){
+        let humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection,computerSelection);}
+    if(humanScore > computerScore){
+        console.log("You have won the game")
+    }
+    else if(computerScore > humanScore){
+        console.log("You have lost xD")
+    }
+    else{
+        console.log("You have tied after 5 rounds!")
+    }
+    }
+
+playGame();
