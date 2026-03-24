@@ -71,4 +71,10 @@ function playGame(){
     }
     }
 
+const rock_but = document.querySelector('#Rock')
+const paper_but = document.querySelector('#Paper')
+const scissors_but = document.querySelector('#Scissors')
+
+
+
 playGame();
