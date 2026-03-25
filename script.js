@@ -16,43 +16,83 @@ function getComputerChoice(){
     }
 }
 
-function getHumanChoice(){
+const rock_but = document.getElementById('Rock')
+const paper_but = document.getElementById('Paper')
+const scissors_but = document.getElementById('Scissors')
+const results = document.getElementById('results')
+
+const human_tally = document.getElementById('human')
+const computer_tally = document.getElementById('computer')
+
+/*function getHumanChoice(){
     let choice = prompt("Choose: rock, paper or scissors");
     return choice
-}
+}*/
+
+const human_score = document.createElement('p')
+const computer_score = document.createElement('p')
 
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase()
 
     if (humanChoice === computerChoice){
-        console.log("It's a tie!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("It's a tie!")
+        results.appendChild(p_result)
+
     }
     else if( (humanChoice == "scissors") && (computerChoice == "rock")){
-        console.log("You lose hahaaaa!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("You lose hahaaaa!")
+        results.appendChild(p_result)
         computerScore++
     }
     else if( (humanChoice == "rock") && (computerChoice == "paper")){
-        console.log("You lose hahaaaa!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("You lose hahaaaa!")
+        results.appendChild(p_result)
         computerScore++
         
     }
     else if( (humanChoice == "paper") && (computerChoice == "scissors")){
-        console.log("You lose hahaaaa!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("You lose hahaaaa!")
+        results.appendChild(p_result)
         return computerScore++ }
     else if( (humanChoice == "paper") && (computerChoice == "rock")){
-         console.log("You win OMG!")
+         const p_result = document.createElement('p')
+        p_result.textContent = ("You win OMG")
+        results.appendChild(p_result)
          return humanScore++
     }
     else if( (humanChoice == "rock") && (computerChoice == "scissors")){
-        console.log("You win OMG!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("You win OMG")
+        results.appendChild(p_result)
         return humanScore++
     }
     else if( (humanChoice == "scissors") && (computerChoice == "paper")){
-        console.log("You win OMG!")
+        const p_result = document.createElement('p')
+        p_result.textContent = ("You win OMG")
+        results.appendChild(p_result)
         return humanScore++
     }
+    human_score.textContent = humanScore
+    human_tally.appendChild(human_score)
+
+    
+    computer_score.textContent = computerScore
+    computer_tally.appendChild(computer_score)
 
 }
+
+rock_but.addEventListener('click', () => {playRound('rock', getComputerChoice())})
+paper_but.addEventListener('click', () => {playRound('paper', getComputerChoice())})
+scissors_but.addEventListener('click', () => {playRound('scissors', getComputerChoice())})
+
+
+
+
 
 
 function playGame(){
@@ -71,10 +111,8 @@ function playGame(){
     }
     }
 
-const rock_but = document.querySelector('#Rock')
-const paper_but = document.querySelector('#Paper')
-const scissors_but = document.querySelector('#Scissors')
 
 
 
-playGame();
+
+//playGame();
