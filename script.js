@@ -84,7 +84,10 @@ function playRound(humanChoice, computerChoice){
     computer_score.textContent = computerScore
     computer_tally.appendChild(computer_score)
 
+    
+
 }
+
 
 rock_but.addEventListener('click', () => {playRound('rock', getComputerChoice())})
 paper_but.addEventListener('click', () => {playRound('paper', getComputerChoice())})
